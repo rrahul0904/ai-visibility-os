@@ -1,0 +1,4 @@
+import { AppShell, PageHeader } from "../../components/shell";
+import { scorePrompt } from "@visibility/core";
+import { getStore } from "../../lib/store";
+export default async function PromptsPage(){ const store=await getStore(); const prompts=await store.listPrompts(); return <AppShell><PageHeader eyebrow="Prompt intelligence" title="Buyer prompt portfolio" description="Monitor commercially meaningful questions instead of treating every AI prompt equally."/><div className="table-wrap"><table><thead><tr><th>Prompt</th><th>Intent</th><th>Providers</th><th>Volume</th><th>Priority score</th></tr></thead><tbody>{prompts.map(p=><tr key={p.id}><td><strong>{p.text}</strong></td><td>{p.intent}</td><td>{p.providers.map(x=><span className="tag" key={x}>{x}</span>)}</td><td>{p.volume}/5</td><td className="score">{scorePrompt(p)}</td></tr>)}</tbody></table></div></AppShell> }
