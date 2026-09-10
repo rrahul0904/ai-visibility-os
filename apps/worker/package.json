@@ -1,0 +1,11 @@
+{
+  "name": "@visibility/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "node src/index.mjs"},
+  "dependencies": {
+    "@visibility/core": "0.1.0",
+    "@visibility/db": "0.1.0"
+  }
+}
