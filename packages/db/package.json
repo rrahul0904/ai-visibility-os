@@ -1,0 +1,7 @@
+{
+  "name": "@visibility/db",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.js",
+  "dependencies": {"postgres": "^3.4.5"}
+}
