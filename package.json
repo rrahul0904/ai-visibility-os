@@ -1,0 +1,16 @@
+{
+  "name": "ai-visibility-os",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Clean-room AI visibility intelligence and execution platform",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm --workspace @visibility/web run dev",
+    "build": "npm --workspace @visibility/web run build",
+    "start": "npm --workspace @visibility/web run start",
+    "worker": "npm --workspace @visibility/worker run start",
+    "test": "npm --workspace @visibility/core test",
+    "check": "node scripts/check-project.mjs"
+  },
+  "engines": {"node": ">=22"}
+}
