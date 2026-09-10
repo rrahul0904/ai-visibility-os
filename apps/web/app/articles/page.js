@@ -1,0 +1,3 @@
+import { AppShell, PageHeader } from "../../components/shell";
+import { getStore } from "../../lib/store";
+export default async function ArticlesPage(){ const store=await getStore(); const rows=await store.listArticles(); return <AppShell><PageHeader eyebrow="Content execution" title="Content pipeline" description="Turn visibility gaps into briefs, drafts, approvals, schedules and CMS publications."/><div className="table-wrap"><table><thead><tr><th>Article</th><th>Status</th><th>Source action</th><th>Schedule</th></tr></thead><tbody>{rows.map(a=><tr key={a.id}><td><strong>{a.title}</strong></td><td><span className="pill">{a.status}</span></td><td>{a.actionId || "manual"}</td><td>{a.scheduledAt || "—"}</td></tr>)}</tbody></table></div></AppShell> }
